@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | KabaddiWala Express</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<body>
+  <header>
+    <h1>KabaddiWala Express - Scrap Collection Service</h1>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="services.html">🛠 Services</a>
+      <a href="about.html">ℹ️ About</a>
+      <a href="contact.html">📞 Contact</a>
+    </nav>
+  </header>
+
+  <div class="toggle-container">
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </div>
+
+  <main>
+    <section class="hero">
+      <lottie-player src="https://lottie.host/your-url.json" background="transparent" speed="1" style="width: 250px;" loop autoplay></lottie-player>
+      <section class="parallax"></section>
+
+      <section class="features">
+        <div class="feature" data-aos="fade-right">
+          <h3>📦 Easy Pickup</h3>
+          <p>Schedule a pickup from the comfort of your home.</p>
+        </div>
+        <div class="feature" data-aos="fade-up">
+          <h3>🔄 Instant Price</h3>
+          <p>Get live rates for your scrap materials.</p>
+        </div>
+        <div class="feature" data-aos="fade-left">
+          <h3>🌍 Eco Friendly</h3>
+          <p>Contribute to a cleaner environment.</p>
+        </div>
+      </section>
+      
+      <div class="hero-content">
+        <h1>♻️ KabaddiWala Express</h1>
+        <p>Your Waste, Our Responsibility</p>
+        <a href="services.html" class="cta-btn">Explore Scrap Services</a>
+      </div>
+    </section>
+  </main>
+
+  <button id="scrollToTopBtn" title="Go to top">⬆</button>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      let theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    }
+
+    window.onload = () => {
+      document.body.classList.add("loaded");
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+
+    // Scroll to top
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
+    };
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<!-- Add this at the bottom of each HTML file -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2025 KabaddiWala Express. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html">Services</a>
+    </div>
+  </div>
+</footer>
+
+<a href="contact.html" class="chat-icon" title="Need Help?">💬</a>
+
+</body>
+</html>
